@@ -10,7 +10,7 @@ mkdir -p .ctf-backup
 
 ctf checkout
 
-if [$? = 0]; then
+if [ $? = 0 ]; then
   echo "Checked out .ctf/";
 else
   echo "Backing up pre-existing ./ctf";
