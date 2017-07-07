@@ -1,1 +1,1 @@
-/Users/clark/.env/.bash/.bash_profile
+.env/.bash/.bash_profile

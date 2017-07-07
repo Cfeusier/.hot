@@ -1,0 +1,12 @@
+# Aliases Manifest for alias-cli
+alias g='git'
+alias gs='git status'
+alias gb='git branch'
+alias gco='git checkout'
+alias gp='git push'
+alias gpo='git push origin'
+alias gpl='git pull'
+alias gplr='git pull --rebase'
+alias gf='git fetch'
+alias gr='git rebase'
+alias gri='git rebase -i'
