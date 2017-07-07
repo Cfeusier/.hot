@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 
 linkBash() {
-  ln -s ~/.ctf/.env/.bash/.bashrc ~/.bashrc
-  ln -s ~/.ctf/.env/.bash/.bash_profile ~/.bash_profile
+  ln -s .env/.bash/.bashrc ~/.bashrc
+  ln -s .env/.bash/.bash_profile ~/.bash_profile
 }
 
 linkZsh() {
-  ln -s ~/.ctf/.env/.zsh/.zshrc ~/.zshrc
+  ln -s .env/.zsh/.zshrc ~/.zshrc
 }
 
 linkTmux() {
-  ln -s ~/.ctf/.env/.tmux/.tmux.conf ~/.tmux.conf
+  ln -s .env/.tmux/.tmux.conf ~/.tmux.conf
 }
 
 linkAll() {
-  linkBash && linkZsh && linkTmux
+  linkBash
+  linkZsh
+  linkTmux
 }

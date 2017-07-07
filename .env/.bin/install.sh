@@ -20,7 +20,7 @@
 #ctf checkout
 #ctf config status.showUntrackedFiles no
 
-source $HOME/.ctf/.env/.bin/link.sh
+source $HOME/.env/.bin/link.sh
 
 linkAll
 

@@ -1,1 +1,1 @@
-/Users/clark/.env/.zsh/.zshrc
+.env/.zsh/.zshrc
