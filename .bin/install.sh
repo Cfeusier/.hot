@@ -22,8 +22,6 @@ echo 'Removing .gitconfig...'
 rm $HOME/.gitconfig
 echo 'Removing .gitignore...'
 rm $HOME/.gitignore
-echo 'Removing .gitignore_global'
-rm $HOME/.gitignore_global
 
 git clone --bare git@github.com:Cfeusier/.ctf.git $HOME/.ctf
 
@@ -32,11 +30,7 @@ ctf() {
 }
 
 ctf checkout
-# ctf config status.showUntrackedFiles no
-# ctf config --global user.name "Clark Feusier"
-# ctf config --global user.email cfeusier@gmail.com
-# ctf config --global core.editor vim
-# ctf config --global core.excludeFiles ~/.gitignore
+ctf config status.showUntrackedFiles no
 
 source $HOME/.bin/link.sh
 linkAll
