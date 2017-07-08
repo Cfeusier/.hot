@@ -37,3 +37,4 @@ ctf config status.showUntrackedFiles no
 source $HOME/.bin/link.sh
 linkAll
 
+ctf config -f $HOME/.gitconfig
