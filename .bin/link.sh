@@ -43,3 +43,9 @@ linkAll() {
   echo '----------------------------------------------------------------------'
   linkGit
 }
+
+linkDotfile() {
+  functionName = "link$1"
+  $functionName
+}
+

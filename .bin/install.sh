@@ -46,5 +46,8 @@ ctf config status.showUntrackedFiles no
 echo '----------------------------------------------------------------------'
 echo 'Linking repository to relevant dotfiles...'
 source $HOME/.bin/link.sh
-linkAll
+
+link 'Git'
+
+#linkAll
 
