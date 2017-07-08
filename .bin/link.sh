@@ -17,9 +17,16 @@ linkVim() {
   ln -s .env/.vim/.vimrc ~/.vimrc
 }
 
+linkGit() {
+  ln -s .env/.git/.gitconfig ~/.gitconfig
+  ln -s .env/.git/.gitignore ~/.gitignore
+  ln -s .env/.git/.gitignore_global ~/.gitignore_global
+}
+
 linkAll() {
   linkBash
   linkZsh
   linkTmux
   linkVim
+  linkGit
 }
