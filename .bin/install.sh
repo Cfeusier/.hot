@@ -2,37 +2,37 @@
 
 # Cleanup before install: since this is for new instances only, no backup needed #
 # CAUTION: DO NOT RUN THIS unless you are ok with the dotfiles listed below getting nuked #
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .ctf/ before cloning repository...'
 rm -rf $HOME/.ctf
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .env/...'
 rm -rf $HOME/.env
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .bin/...'
 rm -rf $HOME/.bin
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .bashrc...'
 rm $HOME/.bashrc
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .bash_profile...'
 rm $HOME/.bash_profile
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .zshrc...'
 rm $HOME/.zshrc
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .tmux.conf...'
 rm $HOME/.tmux.conf
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .vimrc...'
 rm $HOME/.vimrc
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .gitconfig...'
 rm $HOME/.gitconfig
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Removing .gitignore...'
 rm $HOME/.gitignore
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 
 git clone --bare git@github.com:Cfeusier/.ctf.git $HOME/.ctf
 
@@ -40,11 +40,10 @@ ctf() {
   /usr/bin/git --git-dir=$HOME/.ctf/ --work-tree=$HOME $@
 }
 
-echo '-------------------------------------------'
 ctf checkout
 ctf config status.showUntrackedFiles no
 
-echo '-------------------------------------------'
+echo '----------------------------------------------------------------------'
 echo 'Linking repository to relevant dotfiles...'
 source $HOME/.bin/link.sh
 linkAll
