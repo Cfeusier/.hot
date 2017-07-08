@@ -33,6 +33,9 @@ echo '----------------------------------------------------------------------'
 echo 'Removing .gitignore...'
 rm $HOME/.gitignore
 echo '----------------------------------------------------------------------'
+echo 'Removing README...'
+rm $HOME/README.md
+echo '----------------------------------------------------------------------'
 
 git clone --bare git@github.com:Cfeusier/.ctf.git $HOME/.ctf
 
