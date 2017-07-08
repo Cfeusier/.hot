@@ -3,6 +3,7 @@
 linkBash() {
   echo 'Linking .env/bash/.bashrc to ~/.bashrc...'
   ln -s .env/bash/.bashrc ~/.bashrc
+  echo '----------------------------------------------------------------------'
   echo 'Linking .env/bash/.bash_profile to ~/.bash_profile...'
   ln -s .env/bash/.bash_profile ~/.bash_profile
 }
@@ -25,6 +26,7 @@ linkVim() {
 linkGit() {
   echo 'Linking .env/git/.gitconfig to ~/.gitconfig...'
   ln -s .env/git/.gitconfig ~/.gitconfig
+  echo '----------------------------------------------------------------------'
   echo 'Linking .env/git/.gitignore to ~/.gitignore...'
   ln -s .env/git/.gitignore ~/.gitignore
 }
