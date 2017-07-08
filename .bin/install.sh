@@ -20,10 +20,10 @@ echo 'Removing .vimrc...'
 rm $HOME/.vimrc
 echo 'Removing .gitconfig...'
 rm $HOME/.gitconfig
-# echo 'Removing .gitignore...'
-# rm $HOME/.gitignore
-# echo 'Removing .gitignore_global'
-# rm $HOME/.gitignore_global
+echo 'Removing .gitignore...'
+rm $HOME/.gitignore
+echo 'Removing .gitignore_global'
+rm $HOME/.gitignore_global
 
 git clone --bare git@github.com:Cfeusier/.ctf.git $HOME/.ctf
 
