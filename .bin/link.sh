@@ -13,8 +13,13 @@ linkTmux() {
   ln -s .env/.tmux/.tmux.conf ~/.tmux.conf
 }
 
+linkVim() {
+  ln -s .env/.vim/.vimrc ~/.vimrc
+}
+
 linkAll() {
   linkBash
   linkZsh
   linkTmux
+  linkVim
 }

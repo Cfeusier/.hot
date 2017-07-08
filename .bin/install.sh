@@ -18,9 +18,12 @@ else
 fi;
 
 ctf checkout
+
 ctf config status.showUntrackedFiles no
 
-source $HOME/.env/.bin/link.sh
+source $HOME/.bin/clean.sh
+
+source $HOME/.bin/link.sh
 
 linkAll
 
