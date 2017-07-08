@@ -32,9 +32,10 @@ ctf() {
 }
 
 ctf checkout
-ctf config status.showUntrackedFiles no
+#ctf config status.showUntrackedFiles no
+ctf config --global user.name "Clark Feusier"
+ctf config --global user.email cfeusier@gmail.com
 
 source $HOME/.bin/link.sh
 linkAll
 
-ctf config -f $HOME/.gitconfig
