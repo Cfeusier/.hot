@@ -9,21 +9,21 @@ rm -rf $HOME/.env
 echo 'Removing .bin/...'
 rm -rf $HOME/.bin
 echo 'Removing .bashrc...'
-rm -rf $HOME/.bashrc
+rm $HOME/.bashrc
 echo 'Removing .bash_profile...'
-rm -rf $HOME/.bash_profile
+rm $HOME/.bash_profile
 echo 'Removing .zshrc...'
-rm -rf $HOME/.zshrc
+rm $HOME/.zshrc
 echo 'Removing .tmux.conf...'
-rm -rf $HOME/.tmux.conf
+rm $HOME/.tmux.conf
 echo 'Removing .vimrc...'
-rm -rf $HOME/.vimrc
+rm $HOME/.vimrc
 echo 'Removing .gitconfig...'
-rm -rf $HOME/.gitconfig
-echo 'Removing .gitignore...'
-rm -rf $HOME/.gitignore
-echo 'Removing .gitignore_global'
-rm -rf $HOME/.gitignore_global
+rm $HOME/.gitconfig
+# echo 'Removing .gitignore...'
+# rm $HOME/.gitignore
+# echo 'Removing .gitignore_global'
+# rm $HOME/.gitignore_global
 
 git clone --bare git@github.com:Cfeusier/.ctf.git $HOME/.ctf
 
@@ -32,11 +32,11 @@ ctf() {
 }
 
 ctf checkout
-ctf config status.showUntrackedFiles no
-ctf config --global user.name "Clark Feusier"
-ctf config --global user.email cfeusier@gmail.com
-ctf config --global core.editor vim
-ctf config --global core.excludeFiles ~/.gitignore
+# ctf config status.showUntrackedFiles no
+# ctf config --global user.name "Clark Feusier"
+# ctf config --global user.email cfeusier@gmail.com
+# ctf config --global core.editor vim
+# ctf config --global core.excludeFiles ~/.gitignore
 
 source $HOME/.bin/link.sh
 linkAll

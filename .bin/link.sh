@@ -18,9 +18,9 @@ linkVim() {
 }
 
 linkGit() {
-  ln -s .env/.git/.gitconfig ~/.gitconfig
-  ln -s .env/.git/.gitignore ~/.gitignore
-  ln -s .env/.git/.gitignore_global ~/.gitignore_global
+  ln -s .env/git/.gitconfig ~/.gitconfig
+  #ln -s .env/.git/.gitignore ~/.gitignore
+  #ln -s .env/.git/.gitignore_global ~/.gitignore_global
 }
 
 linkAll() {
