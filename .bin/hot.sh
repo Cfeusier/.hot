@@ -9,15 +9,15 @@ install() {
   git clone --bare git@github.com:Cfeusier/.hot.git $HOME/.hot
 
   # Checkout recently cloned local hot repository and configure to only show tracked files
-  hotg checkout
-  hotg config status.showUntrackedFiles no
+  g checkout
+  g config status.showUntrackedFiles no
 
   # Link source dotfiles to 'expected' locations on file system
   link_all
 }
 
 #### CLI Public Interface to Hot-wrapped-Git ####
-hotg() {
+g() {
   /usr/bin/git --git-dir=$HOME/.hot/ --work-tree=$HOME $@
 }
 
@@ -117,7 +117,6 @@ link_bash() {
     log_separator
   fi
   echo "alias hot='/Users/clark/.bin/hot.sh'" >> .env/bash/.bashrc
-  echo "alias hotg='/Users/clark/.bin/hot.sh'" >> .env/bash/.bashrc
   echo 'Linking .env/bash/.bashrc to ~/.bashrc...'
   ln -s .env/bash/.bashrc ~/.bashrc
   log_separator
@@ -131,7 +130,6 @@ link_zsh() {
     log_separator
   fi
   echo "alias hot='/Users/clark/.bin/hot.sh'" >> .env/zsh/.zshrc
-  echo "alias hotg='/Users/clark/.bin/hot.sh'" >> .env/zsh/.zshrc
   echo 'Linking .env/zsh/.zshrc to ~/.zshrc...'
   ln -s .env/zsh/.zshrc ~/.zshrc
 }
