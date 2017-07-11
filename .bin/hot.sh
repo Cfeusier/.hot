@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+HOT="$HOME/.bin/hot.sh"
+
 #### CLI Public Tool to Fully Configure Development Environment ####
 install() {
   # Clean relevant file-system locations before installation of .hot
@@ -11,6 +13,8 @@ install() {
   # Checkout recently cloned local hot repository and configure to only show tracked files
   g checkout
   g config status.showUntrackedFiles no
+
+  chmod +x "$HOT"
 
   # Link source dotfiles to 'expected' locations on file system
   link_all
@@ -116,7 +120,6 @@ link_bash() {
     remove_bash_profile
     log_separator
   fi
-  echo "alias hot='/Users/clark/.bin/hot.sh'" >> .env/bash/.bashrc
   echo 'Linking .env/bash/.bashrc to ~/.bashrc...'
   ln -s .env/bash/.bashrc ~/.bashrc
   log_separator
@@ -129,7 +132,6 @@ link_zsh() {
     remove_zshrc
     log_separator
   fi
-  echo "alias hot='/Users/clark/.bin/hot.sh'" >> .env/zsh/.zshrc
   echo 'Linking .env/zsh/.zshrc to ~/.zshrc...'
   ln -s .env/zsh/.zshrc ~/.zshrc
 }
