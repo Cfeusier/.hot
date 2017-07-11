@@ -43,3 +43,18 @@ Edit your dotfiles in `.env`, and then use `hot g` just like `git`, to add, comm
     - link_tmux
     - link_vim
 
+### TODO
+
+- package managers
+- languages/interpreters/compilers
+- zsh, brew, git, etc. installs
+- VSC/vim-plugins
+- work-specific setup
+- packages
+- key-bindings
+- OS configuration customizations
+- work-flow applications
+- ssh setup/certs
+- aliases
+- write dotfiles in `.env`, as they are just stubs
+
