@@ -53,6 +53,8 @@ link_git() {
 link_all() {
   # this is only used in install script
   echo '----------------------------------------------------------------------'
+  echo 'Linking repository to relevant dotfiles...'
+  echo '----------------------------------------------------------------------'
   link_bash true
   echo '----------------------------------------------------------------------'
   link_zsh true

@@ -1,36 +1,18 @@
 #!/usr/bin/env bash
 
-source ./.bin/clean.sh
+# Clean relevant file-system locations before installation of .ctf
+source ./clean.sh
+clean_all
 
-# Cleanup before install: since this is for new instances only, no backup needed #
-# CAUTION: DO NOT RUN THIS unless you are ok with the dotfiles listed below getting nuked #
-echo '----------------------------------------------------------------------'
-echo 'Cleaning file-system before installing .ctf...'
-remove_root
-remove_env
-remove_bin
-remove_bashrc
-remove_bash_profile
-remove_zshrc
-remove_tmux_conf
-remove_vimrc
-remove_gitconfig
-remove_gitignore
-remove_readme
-echo '----------------------------------------------------------------------'
-
+# Clone remote Git repository into .ctf/ as a bare repository
 git clone --bare git@github.com:Cfeusier/.ctf.git $HOME/.ctf
 
-ctf() {
-  /usr/bin/git --git-dir=$HOME/.ctf/ --work-tree=$HOME $@
-}
-
+# Checkout recently cloned local ctf repository and configure to only show tracked files
+source ./ctf.sh
 ctf checkout
 ctf config status.showUntrackedFiles no
 
-echo '----------------------------------------------------------------------'
-echo 'Linking repository to relevant dotfiles...'
+# Link source dotfiles to 'expected' locations on file system
 source $HOME/.bin/link.sh
-
 link_all
 
