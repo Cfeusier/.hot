@@ -8,3 +8,6 @@ if [ -f "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 alias ctf='/usr/bin/git --git-dir=/Users/clark/.ctf/ --work-tree=/Users/clark'
+alias hot='/Users/clark/.bin/hot.sh'
+alias hot='/Users/clark/.bin/hot.sh'
+alias hot='/Users/clark/.bin/hot.sh'

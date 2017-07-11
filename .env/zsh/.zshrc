@@ -222,4 +222,10 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
-alias ctf='/usr/bin/git --git-dir=/Users/clark/.ctf/ --work-tree=/Users/clark'
+#alias ctf='/usr/bin/git --git-dir=/Users/clark/.ctf/ --work-tree=/Users/clark'
+
+alias hot='/Users/clark/.bin/hot.sh'
+
+alias hot='/Users/clark/.bin/hot.sh'
+alias hot='/Users/clark/.bin/hot.sh'
+alias hotg='/Users/clark/.bin/hot.sh'

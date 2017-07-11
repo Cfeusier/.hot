@@ -1,8 +1,8 @@
-## .ctf
+## .hot
 
-> Hot AF dotfile management
+> Hot hot hot dotfile management
 
-#### Installation
+<!-- #### Installation
 
 ```sh
 curl -Lks https://raw.githubusercontent.com/Cfeusier/.ctf/master/.bin/install.sh | /bin/bash
@@ -15,4 +15,4 @@ The installation script will set up your environment by creating symbolic links 
 #### Management
 
 Edit your dotfiles in `.env`, and then use `ctf` just like `git`, to add, commit, and push to your remote repository. Once ready, rerun install script to setup your enviroment with new changes.
-
+-->
