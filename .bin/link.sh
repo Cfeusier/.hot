@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-linkBash() {
+source ./.bin/clean.sh
+
+link_bash() {
+  if [ "$1" != true ]; then
+    remove_bashrc
+    remove_bash_profile
+  fi
   echo 'Linking .env/bash/.bashrc to ~/.bashrc...'
   ln -s .env/bash/.bashrc ~/.bashrc
   echo '----------------------------------------------------------------------'
@@ -8,22 +14,35 @@ linkBash() {
   ln -s .env/bash/.bash_profile ~/.bash_profile
 }
 
-linkZsh() {
+link_zsh() {
+  if [ "$1" != true ]; then
+    remove_zshrc
+  fi
   echo 'Linking .env/zsh/.zshrc to ~/.zshrc...'
   ln -s .env/zsh/.zshrc ~/.zshrc
 }
 
-linkTmux() {
+link_tmux() {
+  if [ "$1" != true ]; then
+    remove_tmux_conf
+  fi
   echo 'Linking .env/tmux/.tmux.conf to ~/.tmux.conf...'
   ln -s .env/tmux/.tmux.conf ~/.tmux.conf
 }
 
-linkVim() {
+link_vim() {
+  if [ "$1" != true ]; then
+    remove_vimrc
+  fi
   echo 'Linking .env/vim/.vimrc to ~/.vimrc...'
   ln -s .env/vim/.vimrc ~/.vimrc
 }
 
-linkGit() {
+link_git() {
+  if [ "$1" != true ]; then
+    remove_gitconfig
+    remove_gitignore
+  fi
   echo 'Linking .env/git/.gitconfig to ~/.gitconfig...'
   ln -s .env/git/.gitconfig ~/.gitconfig
   echo '----------------------------------------------------------------------'
@@ -31,21 +50,18 @@ linkGit() {
   ln -s .env/git/.gitignore ~/.gitignore
 }
 
-linkAll() {
+link_all() {
+  # this is only used in install script
   echo '----------------------------------------------------------------------'
-  linkBash
+  link_bash true
   echo '----------------------------------------------------------------------'
-  linkZsh
+  link_zsh true
   echo '----------------------------------------------------------------------'
-  linkTmux
+  link_tmux true
   echo '----------------------------------------------------------------------'
-  linkVim
+  link_vim true
   echo '----------------------------------------------------------------------'
-  linkGit
+  link_git true
 }
 
-linkDotfile() {
-  functionName = "link$1"
-  $functionName
-}
-
+"$@"
