@@ -50,7 +50,5 @@ echo '----------------------------------------------------------------------'
 echo 'Linking repository to relevant dotfiles...'
 source $HOME/.bin/link.sh
 
-linkDotfile 'Git'
-
-#linkAll
+linkAll
 
