@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # Clean relevant file-system locations before installation of .ctf
-source ./clean.sh
+source ./.bin/clean.sh
 clean_all
 
 # Clone remote Git repository into .ctf/ as a bare repository
 git clone --bare git@github.com:Cfeusier/.ctf.git $HOME/.ctf
 
 # Checkout recently cloned local ctf repository and configure to only show tracked files
-source ./ctf.sh
+source ./.bin/ctf.sh
 ctf checkout
 ctf config status.showUntrackedFiles no
 
