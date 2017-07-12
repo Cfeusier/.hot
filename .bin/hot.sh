@@ -4,10 +4,12 @@ HOT="$HOME/.bin/hot.sh"
 
 #### CLI Public Tool to Fully Configure Development Environment ####
 install() {
+  # Ensure that this script is run as ROOT user
   if [[ $EUID > 0 ]]; then
     sudo "$0" "$@"
     exit $?
   fi
+
   # Clean relevant file-system locations before installation of .hot
   clean_all
 
@@ -24,14 +26,42 @@ install() {
   # Link source dotfiles to 'expected' locations on file system
   link_all
 
-  # Install Xcode and accept license
-  xcode-select --install
+  # Install Xcode and accept license without opening stupid dialog
+  touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
+  X_CODE_UPDATE=$(softwareupdate -l |
+    grep "\*.*Command Line" |
+    head -n 1 | awk -F"*" '{print $2}' |
+    sed -e 's/^ *//' |
+    tr -d '\n')
+  softwareupdate -i "$X_CODE_UPDATE" --verbose;
 
   # Install Homebrew
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-  # Install Git
-  brew install git
+  # Install Brew Kegs
+  brew install \
+    git \
+    caskroom/cask/brew-cask \
+    leiningen \
+    mongodb \
+    mysql \
+    openssl \
+    python \
+    redis \
+  ;
+
+  # Install Brew Casks
+  brew tap caskroom/versions;
+  brew cask install \
+    firefox \
+    google-chrome \
+    java \
+    macs-fan-control \
+    spotify \
+    sublime-text \
+    vagrant \
+    virtualbox \
+  ;
 
   # Install nvm
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
