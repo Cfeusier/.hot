@@ -4,6 +4,10 @@ HOT="$HOME/.bin/hot.sh"
 
 #### CLI Public Tool to Fully Configure Development Environment ####
 install() {
+  if [[ $EUID > 0 ]]; then
+    sudo "$0" "$@"
+    exit $?
+  fi
   # Clean relevant file-system locations before installation of .hot
   clean_all
 
@@ -14,10 +18,23 @@ install() {
   g checkout
   g config status.showUntrackedFiles no
 
+  # Ensure this script is executable
   chmod +x "$HOT"
 
   # Link source dotfiles to 'expected' locations on file system
   link_all
+
+  # Install Xcode and accept license
+  xcode-select --install
+
+  # Install Homebrew
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+  # Install Git
+  brew install git
+
+  # Install nvm
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 }
 
 #### CLI Public Interface to Hot-wrapped-Git ####
